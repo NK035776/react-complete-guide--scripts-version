@@ -6,8 +6,9 @@ class App extends Component {
 
   state = {
     person: [
-      { id: '1', name: "Nikhil", age: "27" },
+      { id: '1', name: "Nikhil part 2", age: "27" },
       { id: '2', name: "Nikhil part 2", age: "28" },
+      { id: '2', name: "Nikhil part 3", age: "29" },
     ],
     showPersons: false,
   }
@@ -50,7 +51,8 @@ class App extends Component {
 
   render() {
     const style = {
-      backgroundColor: 'white',
+      backgroundColor: 'green',
+      color: 'white',
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
@@ -58,6 +60,8 @@ class App extends Component {
     };
 
     let persons = null;
+    let classes = ['red', 'bold'].join(' ');
+
     if (this.state.showPersons) {
       persons = (
         <div>
@@ -82,12 +86,13 @@ class App extends Component {
           </Person>*/}
         </div>
       );
+      style.backgroundColor = 'red';
     }
 
     return (
       <div className="App">
         <h1>Hi, I am a React App</h1>
-        <p>This is really working.</p>
+        <p className={classes}>This is really working.</p>
         <button
           style={style}
           onClick={this.togglePersonHandler}>Switch Name
